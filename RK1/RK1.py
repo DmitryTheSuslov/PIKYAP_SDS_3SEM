@@ -1,5 +1,6 @@
 """Вариант 16-Г"""
 
+
 class Book:
     def __init__(self, id, title, price, shop_id):
         self.id = id
@@ -48,6 +49,7 @@ books_shops = [
     BookShop(5, 3),
 ]
 
+
 def main():
     """Основная функция"""
 
@@ -71,8 +73,7 @@ def main():
           'в названии которых присутствует слово "book", и список книг в этих магазинах\n')
 
     correct_shop_names = list(filter(lambda x: 'book' in x.lower(), [sh.name for sh in shops]))
-    res1 = {name: [(a[0], a[1]) for a in one_to_many if a[2] == name]
-         for name in correct_shop_names}
+    res1 = {name: [(a[0], a[1]) for a in one_to_many if a[2] == name] for name in correct_shop_names}
     print(res1)
 
     print('\nЗадание Г2:\n"Магазин" и "Книга" связаны отношением один-ко-многим. Выведите список магазинов c '
